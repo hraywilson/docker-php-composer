@@ -37,10 +37,3 @@ COPY ./composer.json /var/www/html/
 RUN composer install && rm -rf /var/www/html/composer-cache
 
 COPY ./public /var/www/html/public
-
-ONBUILD COPY ./composer.json /var/www/html/
-
-ONBUILD RUN composer install && \
- rm -rf /var/www/html/composer-cache
-
-ONBUILD COPY ./public /var/www/html/public
